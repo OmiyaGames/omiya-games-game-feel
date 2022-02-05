@@ -66,8 +66,7 @@ namespace OmiyaGames.TimeSettings.Editor
 		/// <inheritdoc/>
 		public override void Reset(SerializedProperty property)
 		{
-			// TODO: Reset the asset
-			//property.objectReferenceValue = TimeManagerSettingsProvider.Asset;
+			property.objectReferenceValue = TimeManagerSettingsProvider.Asset;
 		}
 	}
 }
