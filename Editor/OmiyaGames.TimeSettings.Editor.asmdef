@@ -1,8 +1,9 @@
 {
-    "name": "OmiyaGames.Time.Editor",
-    "rootNamespace": "OmiyaGames.Time.Editor",
+    "name": "OmiyaGames.TimeSettings.Editor",
+    "rootNamespace": "OmiyaGames.TimeSettings.Editor",
     "references": [
-        "GUID:e9463e5d405c69e4989937b65ea30c08"
+        "GUID:e9463e5d405c69e4989937b65ea30c08",
+        "GUID:d766f256271d9b74799b11c75fce9f10"
     ],
     "includePlatforms": [
         "Editor"

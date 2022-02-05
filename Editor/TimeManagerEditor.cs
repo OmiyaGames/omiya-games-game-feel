@@ -1,14 +1,14 @@
-﻿using UnityEngine;
-using OmiyaGames;
+﻿using UnityEditor;
+using OmiyaGames.Global.Editor;
 
-namespace OmiyaGames.TimeSettings
+namespace OmiyaGames.TimeSettings.Editor
 {
 	///-----------------------------------------------------------------------
 	/// <remarks>
-	/// <copyright file="TimeSettings.cs" company="Omiya Games">
+	/// <copyright file="TimeManagerEditor.cs" company="Omiya Games">
 	/// The MIT License (MIT)
 	/// 
-	/// Copyright (c) 2020-2022 Omiya Games
+	/// Copyright (c) 2020-2020 Omiya Games
 	/// 
 	/// Permission is hereby granted, free of charge, to any person obtaining a copy
 	/// of this software and associated documentation files (the "Software"), to deal
@@ -39,28 +39,19 @@ namespace OmiyaGames.TimeSettings
 	/// <strong>Date:</strong> 2/4/2022<br/>
 	/// <strong>Author:</strong> Taro Omiya
 	/// </term>
-	/// <description>Initial verison.</description>
+	/// <description>Initial version</description>
 	/// </item>
 	/// </list>
 	/// </remarks>
 	///-----------------------------------------------------------------------
 	/// <summary>
-	/// Stores the project settings for <seealso cref="TimeManager"/> to access.
+	/// Editor for <see cref="TimeManagerEditor"/>.
+	/// Appears under inspector when selecting the asset.
 	/// </summary>
-	public class TimeSettings : ScriptableObject
+	[CustomEditor(typeof(TimeManagerEditor))]
+	public class TimeManagerEditor : SettingsEditor
 	{
-		/// <summary>
-		/// The name this settings will appear in the
-		/// Project Setting's left-sidebar.
-		/// </summary>
-		public const string SidebarDisplayPath = "Project/Omiya Games/Time";
-
-		[SerializeField]
-		float defaultHitPauseDurationSeconds = 0.2f;
-
-		///<summary>
-		/// The default duration of hit-pause effects, in seconds.
-		///</summary>
-		public float DefaultHitPauseDurationSeconds => defaultHitPauseDurationSeconds;
+		/// <inheritdoc/>
+		public override string SidebarDisplayPath => TimeManager.SidebarDisplayPath;
 	}
 }

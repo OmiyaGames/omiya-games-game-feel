@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using OmiyaGames.Global;
 
-namespace OmiyaGames.Time
+namespace OmiyaGames.TimeSettings
 {
 	///-----------------------------------------------------------------------
 	/// <copyright file="TimeManager.cs" company="Omiya Games">
@@ -57,6 +58,12 @@ namespace OmiyaGames.Time
 	/// </summary>
 	public class TimeManager : ISingletonScript
 	{
+		/// <summary>
+		/// The name this settings will appear in the
+		/// Project Setting's left-sidebar.
+		/// </summary>
+		public const string SidebarDisplayPath = "Project/Omiya Games/Time";
+
 		public event System.Action<TimeManager> OnManuallyPausedChanged;
 
 		[SerializeField]
@@ -81,7 +88,7 @@ namespace OmiyaGames.Time
 					timeScale = value;
 					if (IsManuallyPaused == false)
 					{
-						Time.timeScale = timeScale;
+						UnityEngine.Time.timeScale = timeScale;
 					}
 				}
 			}
@@ -103,11 +110,11 @@ namespace OmiyaGames.Time
 					// Change time scale
 					if (isManuallyPaused == true)
 					{
-						Time.timeScale = 0;
+						UnityEngine.Time.timeScale = 0;
 					}
 					else
 					{
-						Time.timeScale = TimeScale;
+						UnityEngine.Time.timeScale = TimeScale;
 					}
 
 					// Shoot the pause event
@@ -118,7 +125,7 @@ namespace OmiyaGames.Time
 
 		public override void SingletonAwake()
 		{
-			timeScale = Time.timeScale;
+			timeScale = UnityEngine.Time.timeScale;
 			Singleton.Instance.OnRealTimeUpdate += UpdateRealtime;
 		}
 
@@ -146,7 +153,7 @@ namespace OmiyaGames.Time
 		public void TemporarilyChangeTimeScaleFor(float timeScale, float durationSeconds)
 		{
 			// Change the time scale immediately
-			Time.timeScale = timeScale;
+			UnityEngine.Time.timeScale = timeScale;
 
 			// Store how long it's going to change the time scale
 			slowDownDuration = durationSeconds;
@@ -168,7 +175,7 @@ namespace OmiyaGames.Time
 				if (timeScaleChangedFor > slowDownDuration)
 				{
 					// Revert the time scale
-					Time.timeScale = TimeScale;
+					UnityEngine.Time.timeScale = TimeScale;
 
 					// Flag the 
 					isTimeScaleTemporarilyChanged = false;

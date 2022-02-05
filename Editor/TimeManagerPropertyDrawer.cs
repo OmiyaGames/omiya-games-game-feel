@@ -1,14 +1,14 @@
-﻿using UnityEngine;
-using OmiyaGames;
+﻿using UnityEditor;
+using OmiyaGames.Global.Editor;
 
-namespace OmiyaGames.TimeSettings
+namespace OmiyaGames.TimeSettings.Editor
 {
 	///-----------------------------------------------------------------------
 	/// <remarks>
-	/// <copyright file="TimeSettings.cs" company="Omiya Games">
+	/// <copyright file="TimeManagerPropertyDrawer.cs" company="Omiya Games">
 	/// The MIT License (MIT)
 	/// 
-	/// Copyright (c) 2020-2022 Omiya Games
+	/// Copyright (c) 2020-2020 Omiya Games
 	/// 
 	/// Permission is hereby granted, free of charge, to any person obtaining a copy
 	/// of this software and associated documentation files (the "Software"), to deal
@@ -35,32 +35,39 @@ namespace OmiyaGames.TimeSettings
 	/// </listheader>
 	/// <item>
 	/// <term>
-	/// <strong>Version:</strong> 1.0.0-pre.1<br/>
-	/// <strong>Date:</strong> 2/4/2022<br/>
+	/// <strong>Version:</strong> 0.2.0-preview.1<br/>
+	/// <strong>Date:</strong> 9/27/2020<br/>
 	/// <strong>Author:</strong> Taro Omiya
 	/// </term>
 	/// <description>Initial verison.</description>
+	/// </item><item>
+	/// <term>
+	/// <strong>Version:</strong> 1.1.0<br/>
+	/// <strong>Date:</strong> 2/4/2022<br/>
+	/// <strong>Author:</strong> Taro Omiya
+	/// </term>
+	/// <description>
+	/// Refactor some code to <c>OmiyaGames.Global</c> namespace.
+	/// </description>
 	/// </item>
 	/// </list>
 	/// </remarks>
 	///-----------------------------------------------------------------------
 	/// <summary>
-	/// Stores the project settings for <seealso cref="TimeManager"/> to access.
+	/// <see cref="PropertyDrawer"/> for <see cref="TimeManager"/>.
+	/// Auto-sets the variable if it's null.
 	/// </summary>
-	public class TimeSettings : ScriptableObject
+	[CustomPropertyDrawer(typeof(TimeManager))]
+	public class TimeManagerPropertyDrawer : SettingsPropertyDrawer
 	{
-		/// <summary>
-		/// The name this settings will appear in the
-		/// Project Setting's left-sidebar.
-		/// </summary>
-		public const string SidebarDisplayPath = "Project/Omiya Games/Time";
+		/// <inheritdoc/>
+		public override string SidebarDisplayPath => TimeManager.SidebarDisplayPath;
 
-		[SerializeField]
-		float defaultHitPauseDurationSeconds = 0.2f;
-
-		///<summary>
-		/// The default duration of hit-pause effects, in seconds.
-		///</summary>
-		public float DefaultHitPauseDurationSeconds => defaultHitPauseDurationSeconds;
+		/// <inheritdoc/>
+		public override void Reset(SerializedProperty property)
+		{
+			// TODO: Reset the asset
+			//property.objectReferenceValue = TimeManagerSettingsProvider.Asset;
+		}
 	}
 }

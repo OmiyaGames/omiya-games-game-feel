@@ -1,6 +1,6 @@
 {
-  "name": "com.omiyagames.time",
-  "displayName": "Omiya Games - Time",
+  "name": "com.omiyagames.timesettings",
+  "displayName": "Omiya Games - Time Settings",
   "version": "1.0.0-pre.1",
   "unity": "2021.2",
   "unityRelease": "10f1",
