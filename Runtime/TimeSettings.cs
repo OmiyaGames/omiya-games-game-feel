@@ -36,7 +36,7 @@ namespace OmiyaGames.Time
 	/// <item>
 	/// <term>
 	/// <strong>Version:</strong> 1.0.0-pre.1<br/>
-	/// <strong>Date:</strong> 2/4/2020<br/>
+	/// <strong>Date:</strong> 2/4/2022<br/>
 	/// <strong>Author:</strong> Taro Omiya
 	/// </term>
 	/// <description>Initial verison.</description>
