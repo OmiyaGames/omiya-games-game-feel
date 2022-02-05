@@ -1,0 +1,25 @@
+{
+    "name": "OmiyaGames.Time.Editor.Tests",
+    "rootNamespace": "OmiyaGames.Time.Editor.Tests",
+    "references": [
+        "GUID:27619889b8ba8c24980f49ee34dbb44a",
+        "GUID:0acc523941302664db1f4e527237feb3",
+        "GUID:e9463e5d405c69e4989937b65ea30c08",
+        "GUID:e67acd8ea44bdf9f4acf7d54cb10ff6f"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

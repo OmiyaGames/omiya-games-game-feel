@@ -1,7 +1,8 @@
 {
-    "name": "OmiyaGames.Template.Editor",
+    "name": "OmiyaGames.Time.Editor",
+    "rootNamespace": "OmiyaGames.Time.Editor",
     "references": [
-        "OmiyaGames.Template"
+        "GUID:e9463e5d405c69e4989937b65ea30c08"
     ],
     "includePlatforms": [
         "Editor"
@@ -12,5 +13,6 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": []
+    "versionDefines": [],
+    "noEngineReferences": false
 }

@@ -1,12 +1,11 @@
 {
-    "name": "OmiyaGames.Template.Editor.Tests",
+    "name": "OmiyaGames.Time",
+    "rootNamespace": "OmiyaGames.Time",
     "references": [
-        "OmiyaGames.Template",
-        "OmiyaGames.Template.Editor"
+        "GUID:cdda17712c724478898665290e9a02cc",
+        "GUID:5a47daee1058bbd4ebc7a2d2e7de3c24"
     ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
@@ -14,7 +13,5 @@
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],
-    "optionalUnityReferences": [
-        "TestAssemblies"
-    ]
+    "noEngineReferences": false
 }
