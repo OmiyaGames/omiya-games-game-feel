@@ -45,10 +45,10 @@ namespace OmiyaGames.TimeSettings.Editor
 	/// </remarks>
 	///-----------------------------------------------------------------------
 	/// <summary>
-	/// Editor for <see cref="TimeManagerEditor"/>.
+	/// Editor for <see cref="TimeManager"/>.
 	/// Appears under inspector when selecting the asset.
 	/// </summary>
-	[CustomEditor(typeof(TimeManagerEditor))]
+	[CustomEditor(typeof(TimeManager))]
 	public class TimeManagerEditor : SettingsEditor
 	{
 		/// <inheritdoc/>

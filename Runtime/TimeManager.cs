@@ -52,11 +52,11 @@ namespace OmiyaGames.TimeSettings
 	/// </remarks>
 	///-----------------------------------------------------------------------
 	/// <summary>
-	/// A singleton script that allows adjusting the time scale.  Used for manually
+	/// A settings file that allows adjusting the time scale.  Used for manually
 	/// pausing the game.  Also allows temporarily slowing down or quickening time,
 	/// useful for creating common juicy effects.
 	/// </summary>
-	public class TimeManager : ISingletonScript
+	public class TimeManager : ScriptableObject
 	{
 		/// <summary>
 		/// The name this settings will appear in the
@@ -69,11 +69,11 @@ namespace OmiyaGames.TimeSettings
 		[SerializeField]
 		float defaultHitPauseDuration = 0.2f;
 
-		float timeScale = 1f,
-				timeScaleChangedFor = -1f,
-				slowDownDuration = 1f;
-		bool isManuallyPaused = false,
-				isTimeScaleTemporarilyChanged = false;
+		float timeScale = 1f;
+		float timeScaleChangedFor = -1f;
+		float slowDownDuration = 1f;
+		bool isManuallyPaused = false;
+		bool isTimeScaleTemporarilyChanged = false;
 
 		public float TimeScale
 		{
@@ -123,15 +123,9 @@ namespace OmiyaGames.TimeSettings
 			}
 		}
 
-		public override void SingletonAwake()
+		void Start()
 		{
 			timeScale = UnityEngine.Time.timeScale;
-			Singleton.Instance.OnRealTimeUpdate += UpdateRealtime;
-		}
-
-		public override void SceneAwake()
-		{
-			// Do nothing
 		}
 
 		public void RevertToCustomTimeScale()
@@ -163,13 +157,13 @@ namespace OmiyaGames.TimeSettings
 			isTimeScaleTemporarilyChanged = true;
 		}
 
-		void UpdateRealtime(float unscaledDeltaTime)
+		void Update()
 		{
 			// Check to see if we're not paused, and changed the time scale temporarily
 			if ((IsManuallyPaused == false) && (isTimeScaleTemporarilyChanged == true))
 			{
 				// Increment the duration we've changed the time scale
-				timeScaleChangedFor += unscaledDeltaTime;
+				timeScaleChangedFor += Time.unscaledDeltaTime;
 
 				// Check to see if enough time has passed to revert the time scale
 				if (timeScaleChangedFor > slowDownDuration)
