@@ -1,14 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" oge="OmiyaGames.Common.Editor" editor-extension-mode="True">
-    <Style src="project://database/Packages/com.omiyagames.time/Editor/time-manager-style.uss?fileID=7433441132597879392&amp;guid=e1f2f56cb36e6e38cb9371e401c93e20&amp;type=3#time-manager-style" />
-    <ui:VisualElement name="Style">
-        <ui:VisualElement name="Root">
-            <OmiyaGames.Common.Editor.ProjectSettingsHeader text="Time" name="Header" help-url="https://omiyagames.github.io/omiya-games-time" />
-            <OmiyaGames.Common.Editor.Spacer />
-            <uie:FloatField label="Default Hit Pause Duration" value="0.2" name="defaultHitPause" tooltip="The default duration, in seconds, of a hit-pause effect." binding-path="defaultHitPauseDuration" class="indent" />
-            <OmiyaGames.Common.Editor.Spacer />
-            <ui:Foldout text="Example code" name="CodeHint" value="false" class="indent">
-                <ui:TextField picking-mode="Ignore" value="filler text" text="[SerializeField]&#10;TimeManager timeManager;&#10;&#10;// Briefly stop time upon being hit&#10;void OnTriggerEnter() {&#10;    timeManager.HitPause();&#10;}" multiline="true" readonly="true" name="CodeExample" />
-            </ui:Foldout>
-        </ui:VisualElement>
-    </ui:VisualElement>
+    <uie:FloatField label="Default Hit Pause Duration" value="0.2" name="defaultHitPause" tooltip="The default duration, in seconds, of a hit-pause effect." binding-path="defaultHitPauseDuration" class="indent" />
+    <OmiyaGames.Common.Editor.Spacer />
+    <ui:Foldout text="Example code" name="CodeHint" value="false" class="indent">
+        <ui:TextField picking-mode="Ignore" value="filler text" text="// Briefly stop time upon being hit&#10;void OnTriggerEnter() {&#10;    TimeManager.HitPause();&#10;}" multiline="true" readonly="true" name="CodeExample" />
+    </ui:Foldout>
 </ui:UXML>

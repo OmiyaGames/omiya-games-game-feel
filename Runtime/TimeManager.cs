@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using OmiyaGames.Global;
+using OmiyaGames.Global.Settings;
 
 namespace OmiyaGames.TimeSettings
 {
@@ -56,18 +58,30 @@ namespace OmiyaGames.TimeSettings
 	/// pausing the game.  Also allows temporarily slowing down or quickening time,
 	/// useful for creating common juicy effects.
 	/// </summary>
-	public class TimeManager : ScriptableObject
+	public class TimeManager : BaseSettingsManager<TimeManager, TimeSettings>
 	{
+		/// <summary>
+		/// The configuration name stored in Editor Settings.
+		/// </summary>
+		public const string CONFIG_NAME = "com.omiyagames.timesettings";
 		/// <summary>
 		/// The name this settings will appear in the
 		/// Project Setting's left-sidebar.
 		/// </summary>
-		public const string SidebarDisplayPath = "Project/Omiya Games/Time";
+		public const string SIDEBAR_PATH = "Project/Omiya Games/Time";
+		/// <summary>
+		/// Name of the addressable.
+		/// </summary>
+		public const string ADDRESSABLE_NAME = "TimeSettings";
 
-		public event System.Action<TimeManager> OnManuallyPausedChanged;
-
-		[SerializeField]
-		float defaultHitPauseDuration = 0.2f;
+		/// <summary>
+		/// Triggers when paused.
+		/// </summary>
+		public static event System.Action<TimeManager> OnBeforeManualPauseChanged;
+		/// <summary>
+		/// Triggers when paused.
+		/// </summary>
+		public static event System.Action<TimeManager> OnAfterManualPauseChanged;
 
 		float timeScale = 1f;
 		float timeScaleChangedFor = -1f;
@@ -75,88 +89,90 @@ namespace OmiyaGames.TimeSettings
 		bool isManuallyPaused = false;
 		bool isTimeScaleTemporarilyChanged = false;
 
-		public float TimeScale
+		public static float TimeScale
 		{
 			get
 			{
-				return timeScale;
+				return GetInstance().timeScale;
 			}
 			set
 			{
-				if (Mathf.Approximately(timeScale, value) == false)
-				{
-					timeScale = value;
-					if (IsManuallyPaused == false)
-					{
-						UnityEngine.Time.timeScale = timeScale;
-					}
-				}
-			}
-		}
-
-		public bool IsManuallyPaused
-		{
-			get
-			{
-				return isManuallyPaused;
-			}
-			set
-			{
-				if (isManuallyPaused != value)
+				TimeManager self = GetInstance();
+				if (Mathf.Approximately(self.timeScale, value) == false)
 				{
 					// Change value
-					isManuallyPaused = value;
-
-					// Change time scale
-					if (isManuallyPaused == true)
-					{
-						UnityEngine.Time.timeScale = 0;
-					}
-					else
-					{
-						UnityEngine.Time.timeScale = TimeScale;
-					}
-
-					// Shoot the pause event
-					OnManuallyPausedChanged?.Invoke(this);
+					self.timeScale = value;
+					UpdateTimeScale(self);
 				}
 			}
 		}
 
-		void Start()
+		public static bool IsManuallyPaused
 		{
-			timeScale = UnityEngine.Time.timeScale;
+			get
+			{
+				return GetInstance().isManuallyPaused;
+			}
+			set
+			{
+				TimeManager self = GetInstance();
+				if (self.isManuallyPaused != value)
+				{
+					// Shoot the pause event
+					OnBeforeManualPauseChanged?.Invoke(self);
+
+					// Change value
+					self.isManuallyPaused = value;
+					UpdateTimeScale(self);
+
+					// Shoot the pause event
+					OnAfterManualPauseChanged?.Invoke(self);
+				}
+			}
 		}
 
-		public void RevertToCustomTimeScale()
+		public static void RevertToCustomTimeScale()
 		{
 			IsManuallyPaused = false;
 			TimeScale = Singleton.Get<Saves.GameSettings>().CustomTimeScale;
 		}
 
-		public void HitPause()
+		public static void HitPause()
 		{
-			PauseFor(defaultHitPauseDuration);
+			PauseFor(GetData().DefaultHitPauseDurationSeconds);
 		}
 
-		public void PauseFor(float durationSeconds)
+		public static void PauseFor(float durationSeconds)
 		{
 			TemporarilyChangeTimeScaleFor(0f, durationSeconds);
 		}
 
-		public void TemporarilyChangeTimeScaleFor(float timeScale, float durationSeconds)
+		public static void TemporarilyChangeTimeScaleFor(float timeScale, float durationSeconds)
 		{
 			// Change the time scale immediately
-			UnityEngine.Time.timeScale = timeScale;
+			Time.timeScale = timeScale;
 
 			// Store how long it's going to change the time scale
-			slowDownDuration = durationSeconds;
+			TimeManager self = GetInstance();
+			self.slowDownDuration = durationSeconds;
 
 			// Update flags to revert the time scale later
-			timeScaleChangedFor = 0f;
-			isTimeScaleTemporarilyChanged = true;
+			self.timeScaleChangedFor = 0f;
+			self.isTimeScaleTemporarilyChanged = true;
 		}
 
+		/// <inheritdoc/>
+		protected override string AddressableName => ADDRESSABLE_NAME;
+
+		/// <inheritdoc/>
+		protected override IEnumerator OnSetup()
+		{
+			// Store the timescale at this moment.
+			timeScale = Time.timeScale;
+			yield return base.OnSetup();
+		}
+
+		// TODO: consider using different alternatives than using Update()
 		void Update()
 		{
 			// Check to see if we're not paused, and changed the time scale temporarily
@@ -169,11 +185,26 @@ namespace OmiyaGames.TimeSettings
 				if (timeScaleChangedFor > slowDownDuration)
 				{
 					// Revert the time scale
-					UnityEngine.Time.timeScale = TimeScale;
+					Time.timeScale = TimeScale;
 
 					// Flag the 
 					isTimeScaleTemporarilyChanged = false;
 				}
+			}
+		}
+
+		static void UpdateTimeScale(TimeManager self)
+		{
+			// Check if paused
+			if (IsManuallyPaused == false)
+			{
+				// If not, progress normally
+				Time.timeScale = self.timeScale;
+			}
+			else
+			{
+				// If so, pause
+				Time.timeScale = 0f;
 			}
 		}
 	}

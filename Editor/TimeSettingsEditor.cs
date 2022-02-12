@@ -5,10 +5,10 @@ namespace OmiyaGames.TimeSettings.Editor
 {
 	///-----------------------------------------------------------------------
 	/// <remarks>
-	/// <copyright file="TimeManagerEditor.cs" company="Omiya Games">
+	/// <copyright file="TimeSettingsEditor.cs" company="Omiya Games">
 	/// The MIT License (MIT)
 	/// 
-	/// Copyright (c) 2020-2020 Omiya Games
+	/// Copyright (c) 2022 Omiya Games
 	/// 
 	/// Permission is hereby granted, free of charge, to any person obtaining a copy
 	/// of this software and associated documentation files (the "Software"), to deal
@@ -36,7 +36,7 @@ namespace OmiyaGames.TimeSettings.Editor
 	/// <item>
 	/// <term>
 	/// <strong>Version:</strong> 1.0.0-pre.1<br/>
-	/// <strong>Date:</strong> 2/4/2022<br/>
+	/// <strong>Date:</strong> 2/7/2022<br/>
 	/// <strong>Author:</strong> Taro Omiya
 	/// </term>
 	/// <description>Initial version</description>
@@ -45,13 +45,13 @@ namespace OmiyaGames.TimeSettings.Editor
 	/// </remarks>
 	///-----------------------------------------------------------------------
 	/// <summary>
-	/// Editor for <see cref="TimeManager"/>.
+	/// Editor for <see cref="TimeSettings"/>.
 	/// Appears under inspector when selecting the asset.
 	/// </summary>
-	[CustomEditor(typeof(TimeManager))]
-	public class TimeManagerEditor : SettingsEditor
+	[CustomEditor(typeof(TimeSettings))]
+	public class TimeSettingsEditor : SettingsEditor
 	{
 		/// <inheritdoc/>
-		public override string SidebarDisplayPath => TimeManager.SidebarDisplayPath;
+		public override string SidebarDisplayPath => TimeManager.SIDEBAR_PATH;
 	}
 }
