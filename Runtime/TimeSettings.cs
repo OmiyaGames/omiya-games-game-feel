@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using OmiyaGames.Global.Settings;
 
-namespace OmiyaGames.TimeSettings
+namespace OmiyaGames.GameFeel
 {
 	///-----------------------------------------------------------------------
 	/// <copyright file="TimeSettings.cs" company="Omiya Games">

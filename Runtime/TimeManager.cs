@@ -3,7 +3,7 @@ using UnityEngine;
 using OmiyaGames.Global;
 using OmiyaGames.Global.Settings;
 
-namespace OmiyaGames.TimeSettings
+namespace OmiyaGames.GameFeel
 {
 	///-----------------------------------------------------------------------
 	/// <copyright file="TimeManager.cs" company="Omiya Games">

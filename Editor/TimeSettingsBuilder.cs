@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using OmiyaGames.Global.Settings.Editor;
 
-namespace OmiyaGames.TimeSettings.Editor
+namespace OmiyaGames.GameFeel.Editor
 {
 	///-----------------------------------------------------------------------
 	/// <remarks>

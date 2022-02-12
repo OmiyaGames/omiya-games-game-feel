@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using OmiyaGames.Global.Editor;
 
-namespace OmiyaGames.TimeSettings.Editor
+namespace OmiyaGames.GameFeel.Editor
 {
 	///-----------------------------------------------------------------------
 	/// <remarks>
