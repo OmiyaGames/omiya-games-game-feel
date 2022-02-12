@@ -2,6 +2,6 @@
     <uie:FloatField label="Default Hit Pause Duration" value="0.2" name="defaultHitPause" tooltip="The default duration, in seconds, of a hit-pause effect." binding-path="defaultHitPauseDuration" class="indent" />
     <OmiyaGames.Common.Editor.Spacer />
     <ui:Foldout text="Example code" name="CodeHint" value="false" class="indent">
-        <ui:TextField picking-mode="Ignore" value="filler text" text="// Briefly stop time upon being hit&#10;void OnTriggerEnter() {&#10;    TimeManager.HitPause();&#10;}" multiline="true" readonly="true" name="CodeExample" />
+        <ui:TextField picking-mode="Ignore" value="filler text" text="// Briefly stop time upon being hit&#10;void OnTriggerEnter() {&#10;    Juice.HitPause();&#10;}" multiline="true" readonly="true" name="CodeExample" />
     </ui:Foldout>
 </ui:UXML>

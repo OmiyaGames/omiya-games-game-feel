@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
-using OmiyaGames.Global;
-using OmiyaGames.Global.Settings;
+﻿using OmiyaGames.Global.Settings;
 
 namespace OmiyaGames.GameFeel
 {
@@ -70,14 +67,20 @@ namespace OmiyaGames.GameFeel
 		/// <inheritdoc/>
 		protected override string AddressableName => ADDRESSABLE_NAME;
 
-		public static void HitPause()
+		/// <summary>
+		/// Briefly pauses the game, creating the "hit-pause" effect.
+		/// </summary>
+		/// <param name="durationSeconds">
+		/// How long the effect lasts.
+		/// Set to negative to use the default pause duration.
+		/// </param>
+		public static void HitPause(float durationSeconds = -1f)
 		{
-			PauseFor(GetData().DefaultHitPauseDurationSeconds);
-		}
-
-		public static void PauseFor(float durationSeconds)
-		{
-			TimeManager.TemporarilyChangeTimeScaleFor(0f, durationSeconds);
+			if (durationSeconds <= 0f)
+			{
+				durationSeconds = GetData().DefaultHitPauseDurationSeconds;
+			}
+			TimeManager.SetTimeScaleFor(0f, durationSeconds);
 		}
 	}
 }

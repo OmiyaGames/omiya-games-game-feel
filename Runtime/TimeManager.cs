@@ -89,6 +89,10 @@ namespace OmiyaGames.GameFeel
 		bool isManuallyPaused = false;
 		bool isTimeScaleTemporarilyChanged = false;
 
+		/// <summary>
+		/// The "stable" time scale, unaffected by
+		/// hit-pauses, etc.
+		/// </summary>
 		public static float TimeScale
 		{
 			get
@@ -107,6 +111,9 @@ namespace OmiyaGames.GameFeel
 			}
 		}
 
+		/// <summary>
+		/// If true, pauses the game.
+		/// </summary>
 		public static bool IsManuallyPaused
 		{
 			get
@@ -131,13 +138,25 @@ namespace OmiyaGames.GameFeel
 			}
 		}
 
-		public static void RevertToCustomTimeScale()
+		/// <summary>
+		/// Reverts the default time scale stored in
+		/// <see cref="Saves.GameSettings"/>.
+		/// </summary>
+		public static void RevertTimeScale()
 		{
 			IsManuallyPaused = false;
 			TimeScale = Singleton.Get<Saves.GameSettings>().CustomTimeScale;
 		}
 
-		public static void TemporarilyChangeTimeScaleFor(float timeScale, float durationSeconds)
+		/// <summary>
+		/// Temporarily changes the game's timescale for a short duration.
+		/// </summary>
+		/// <param name="timeScale">The timescale to set to.</param>
+		/// <param name="durationSeconds">
+		/// How long the change lasts, in seconds.
+		/// Duration is not affected by <seealso cref="Time.timeScale"/>.
+		/// </param>
+		public static void SetTimeScaleFor(float timeScale, float durationSeconds)
 		{
 			// Change the time scale immediately
 			Time.timeScale = timeScale;
