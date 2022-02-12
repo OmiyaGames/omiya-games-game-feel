@@ -58,21 +58,21 @@ namespace OmiyaGames.GameFeel
 	/// pausing the game.  Also allows temporarily slowing down or quickening time,
 	/// useful for creating common juicy effects.
 	/// </summary>
-	public class TimeManager : BaseSettingsManager<TimeManager, TimeSettings>
+	public class TimeManager : MonoBehaviour
 	{
 		/// <summary>
-		/// The configuration name stored in Editor Settings.
+		/// Grabs the static instance of this manager.
 		/// </summary>
-		public const string CONFIG_NAME = "com.omiyagames.timesettings";
-		/// <summary>
-		/// The name this settings will appear in the
-		/// Project Setting's left-sidebar.
-		/// </summary>
-		public const string SIDEBAR_PATH = "Project/Omiya Games/Time";
-		/// <summary>
-		/// Name of the addressable.
-		/// </summary>
-		public const string ADDRESSABLE_NAME = "TimeSettings";
+		/// <seealso cref="Data"/>
+		protected static TimeManager GetInstance()
+		{
+			TimeManager returnInstance = ComponentSingleton<TimeManager>.Get(true, out bool isFirstTimeCreated);
+			if (isFirstTimeCreated)
+			{
+				returnInstance.timeScale = Time.timeScale;
+			}
+			return returnInstance;
+		}
 
 		/// <summary>
 		/// Triggers when paused.
@@ -137,16 +137,6 @@ namespace OmiyaGames.GameFeel
 			TimeScale = Singleton.Get<Saves.GameSettings>().CustomTimeScale;
 		}
 
-		public static void HitPause()
-		{
-			PauseFor(GetData().DefaultHitPauseDurationSeconds);
-		}
-
-		public static void PauseFor(float durationSeconds)
-		{
-			TemporarilyChangeTimeScaleFor(0f, durationSeconds);
-		}
-
 		public static void TemporarilyChangeTimeScaleFor(float timeScale, float durationSeconds)
 		{
 			// Change the time scale immediately
@@ -159,17 +149,6 @@ namespace OmiyaGames.GameFeel
 			// Update flags to revert the time scale later
 			self.timeScaleChangedFor = 0f;
 			self.isTimeScaleTemporarilyChanged = true;
-		}
-
-		/// <inheritdoc/>
-		protected override string AddressableName => ADDRESSABLE_NAME;
-
-		/// <inheritdoc/>
-		protected override IEnumerator OnSetup()
-		{
-			// Store the timescale at this moment.
-			timeScale = Time.timeScale;
-			yield return base.OnSetup();
 		}
 
 		// TODO: consider using different alternatives than using Update()

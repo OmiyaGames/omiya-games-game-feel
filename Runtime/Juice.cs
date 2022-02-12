@@ -1,11 +1,12 @@
-﻿using UnityEditor;
-using OmiyaGames.Global.Editor;
+﻿using System.Collections;
+using UnityEngine;
+using OmiyaGames.Global;
+using OmiyaGames.Global.Settings;
 
-namespace OmiyaGames.GameFeel.Editor
+namespace OmiyaGames.GameFeel
 {
 	///-----------------------------------------------------------------------
-	/// <remarks>
-	/// <copyright file="TimeSettingsEditor.cs" company="Omiya Games">
+	/// <copyright file="Juice.cs" company="Omiya Games">
 	/// The MIT License (MIT)
 	/// 
 	/// Copyright (c) 2022 Omiya Games
@@ -36,22 +37,47 @@ namespace OmiyaGames.GameFeel.Editor
 	/// <item>
 	/// <term>
 	/// <strong>Version:</strong> 1.0.0-pre.1<br/>
-	/// <strong>Date:</strong> 2/7/2022<br/>
+	/// <strong>Date:</strong> 2/12/2022<br/>
 	/// <strong>Author:</strong> Taro Omiya
 	/// </term>
-	/// <description>Initial version</description>
+	/// <description>Initial verison.</description>
+	/// </description>
 	/// </item>
 	/// </list>
 	/// </remarks>
 	///-----------------------------------------------------------------------
 	/// <summary>
-	/// Editor for <see cref="TimeSettings"/>.
-	/// Appears under inspector when selecting the asset.
+	/// A settings file that allows adjusting the time scale.  Used for manually
+	/// pausing the game.  Also allows temporarily slowing down or quickening time,
+	/// useful for creating common juicy effects.
 	/// </summary>
-	[CustomEditor(typeof(TimeSettings))]
-	public class TimeSettingsEditor : SettingsEditor
+	public class Juice : BaseSettingsManager<Juice, GameFeelSettings>
 	{
+		/// <summary>
+		/// The configuration name stored in Editor Settings.
+		/// </summary>
+		public const string CONFIG_NAME = "com.omiyagames.gamefeel";
+		/// <summary>
+		/// The name this settings will appear in the
+		/// Project Setting's left-sidebar.
+		/// </summary>
+		public const string SIDEBAR_PATH = "Project/Omiya Games/Game Feel";
+		/// <summary>
+		/// Name of the addressable.
+		/// </summary>
+		public const string ADDRESSABLE_NAME = "GameFeelSettings";
+
 		/// <inheritdoc/>
-		public override string SidebarDisplayPath => TimeManager.SIDEBAR_PATH;
+		protected override string AddressableName => ADDRESSABLE_NAME;
+
+		public static void HitPause()
+		{
+			PauseFor(GetData().DefaultHitPauseDurationSeconds);
+		}
+
+		public static void PauseFor(float durationSeconds)
+		{
+			TimeManager.TemporarilyChangeTimeScaleFor(0f, durationSeconds);
+		}
 	}
 }

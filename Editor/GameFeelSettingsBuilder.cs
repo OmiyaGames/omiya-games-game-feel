@@ -1,17 +1,10 @@
-﻿using System.IO;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UIElements;
-using UnityEditor;
-using UnityEditor.UIElements;
-using OmiyaGames.Global.Editor;
 using OmiyaGames.Global.Settings.Editor;
 
 namespace OmiyaGames.GameFeel.Editor
 {
 	///-----------------------------------------------------------------------
 	/// <remarks>
-	/// <copyright file="TimeSettingsProvider.cs" company="Omiya Games">
+	/// <copyright file="GameFeelSettingsBuilder.cs" company="Omiya Games">
 	/// The MIT License (MIT)
 	/// 
 	/// Copyright (c) 2022 Omiya Games
@@ -42,7 +35,7 @@ namespace OmiyaGames.GameFeel.Editor
 	/// <item>
 	/// <term>
 	/// <strong>Version:</strong> 1.0.0-pre.1<br/>
-	/// <strong>Date:</strong> 2/4/2022<br/>
+	/// <strong>Date:</strong> 2/7/2022<br/>
 	/// <strong>Author:</strong> Taro Omiya
 	/// </term>
 	/// <description>Initial verison.</description>
@@ -51,45 +44,12 @@ namespace OmiyaGames.GameFeel.Editor
 	/// </remarks>
 	///-----------------------------------------------------------------------
 	/// <summary>
-	/// Editor for <see cref="TimeSettings"/>.
-	/// Appears under the Project Settings window.
+	/// Pre- and post-build script to add an instance of
+	/// <see cref="GameFeelSettings"/> into the pre-loaded assets (and thus, build.)
 	/// </summary>
-	public class TimeSettingsProvider : BaseSettingsEditor<TimeSettings>
+	public class GameFeelSettingsBuilder : BaseSettingsBuilder<GameFeelSettings>
 	{
 		/// <inheritdoc/>
-		public override string DefaultSettingsFileName => "TimeSettings";
-		/// <inheritdoc/>
-		public override string UxmlPath => "Packages/com.omiyagames.time/Editor/TimeManager.uxml";
-		/// <inheritdoc/>
-		public override string AddressableGroupName => SettingsEditorHelpers.OMIYA_GAMES_GROUP_NAME;
-		/// <inheritdoc/>
-		public override string AddressableName => TimeManager.ADDRESSABLE_NAME;
-		/// <inheritdoc/>
-		public override string ConfigName => TimeManager.CONFIG_NAME;
-		/// <inheritdoc/>
-		public override string HeaderText => "Time Settings";
-		/// <inheritdoc/>
-		public override string HelpUrl => "https://omiyagames.github.io/omiya-games-time";
-
-		/// <summary>
-		/// Constructs a project-scoped <see cref="SettingsProvider"/>.
-		/// </summary>
-		public TimeSettingsProvider(string path, IEnumerable<string> keywords) : base(path, keywords) { }
-
-		/// <summary>
-		/// Registers this <see cref="SettingsProvider"/>.
-		/// </summary>
-		/// <returns></returns>
-		[SettingsProvider]
-		public static SettingsProvider CreateSettingsProvider()
-		{
-			// Create the settings provider
-			return new TimeSettingsProvider(TimeManager.SIDEBAR_PATH, GetSearchKeywordsFromGUIContentProperties<Styles>());
-		}
-
-		class Styles
-		{
-			public static readonly GUIContent defaultHitPauseDuration = new GUIContent("Default Hit Pause Duration Seconds");
-		}
+		public override string ConfigName => Juice.CONFIG_NAME;
 	}
 }
