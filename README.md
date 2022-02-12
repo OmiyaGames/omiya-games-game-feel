@@ -1,8 +1,8 @@
-# [Omiya Games](https://www.omiyagames.com/) - Global Settings
+# [Omiya Games](https://www.omiyagames.com/) - Game Feel
 
-[![openupm](https://img.shields.io/npm/v/com.omiyagames.time?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.omiyagames.time/) [![Documentation](https://github.com/OmiyaGames/omiya-games-time/workflows/Host%20DocFX%20Documentation/badge.svg)](https://omiyagames.github.io/omiya-games-time/) [![Ko-fi Badge](https://img.shields.io/badge/donate-ko--fi-29abe0.svg?logo=ko-fi)](https://ko-fi.com/I3I51KS8F) [![License Badge](https://img.shields.io/github/license/OmiyaGames/omiya-games-time)](/LICENSE.md) 
+[![openupm](https://img.shields.io/npm/v/com.omiyagames.gamefeel?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.omiyagames.gamefeel/) [![Documentation](https://github.com/OmiyaGames/omiya-games-game-feel/workflows/Host%20DocFX%20Documentation/badge.svg)](https://omiyagames.github.io/omiya-games-game-feel/) [![Ko-fi Badge](https://img.shields.io/badge/donate-ko--fi-29abe0.svg?logo=ko-fi)](https://ko-fi.com/I3I51KS8F) [![License Badge](https://img.shields.io/github/license/OmiyaGames/omiya-games-game-feel)](/LICENSE.md) 
 
-A template for creating and editing `ScriptableObjects` displayed in the Project Settings window.  Also provides templates for Singleton instances to retrieve this `ScriptableObject`, editor for displaying the contents of the object in Project Settings window, pre- and post-build scripts to add the object into the build, etc.  This project uses [Addressables](https://docs.unity3d.com/Manual/com.unity.addressables.html) extensively.
+A tool for playing full-screen, juicy special effects.  Currently a work-in-progress.
 
 ## Install
 
@@ -30,11 +30,11 @@ openupm add com.omiyagames.time
 
 ## Resources
 
-- [Documentation](https://omiyagames.github.io/omiya-games-time/)
-- [Change Log](https://omiyagames.github.io/omiya-games-time/manual/changelog.html)
+- [Documentation](https://omiyagames.github.io/omiya-games-game-feel/)
+- [Change Log](https://omiyagames.github.io/omiya-games-game-feel/manual/changelog.html)
 
 ## LICENSE
 
-Overall package is licensed under [MIT](https://github.com/OmiyaGames/omiya-games-time/blob/main/LICENSE.md), unless otherwise noted in the [3rd party licenses](https://github.com/OmiyaGames/omiya-games-time/blob/main/THIRD%20PARTY%20NOTICES.md) file and/or source code.
+Overall package is licensed under [MIT](https://github.com/OmiyaGames/omiya-games-game-feel/blob/main/LICENSE.md), unless otherwise noted in the [3rd party licenses](https://github.com/OmiyaGames/omiya-games-game-feel/blob/main/THIRD%20PARTY%20NOTICES.md) file and/or source code.
 
 Copyright (c) 2022 Omiya Games
