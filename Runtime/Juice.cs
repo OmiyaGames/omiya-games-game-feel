@@ -1,4 +1,5 @@
 ﻿using OmiyaGames.Global.Settings;
+using OmiyaGames.Managers;
 
 namespace OmiyaGames.GameFeel
 {
