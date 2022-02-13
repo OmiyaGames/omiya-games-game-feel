@@ -25,7 +25,7 @@ npm install -g openupm-cli
 ```
 Then, to install this package, just run the following command at the root of your Unity project:
 ```
-openupm add com.omiyagames.time
+openupm add com.omiyagames.gamefeel
 ```
 
 ## Resources

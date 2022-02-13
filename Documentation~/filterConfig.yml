@@ -1,11 +1,11 @@
 apiRules:
 - include:
-    # Including the OmiyaGames.TimeSettings namespace
-    uidRegex: ^OmiyaGames\.TimeSettings$
+    # Including the OmiyaGames.GameFeel namespace
+    uidRegex: ^OmiyaGames\.GameFeel$
     type: Namespace
 - include:
-    # Including the OmiyaGames.TimeSettings.Editor namespace
-    uidRegex: ^OmiyaGames\.TimeSettings$
+    # Including the OmiyaGames.GameFeel.Editor namespace
+    uidRegex: ^OmiyaGames\.GameFeel\.Editor$
     type: Namespace
 - include:
     uidRegex: ^Global
