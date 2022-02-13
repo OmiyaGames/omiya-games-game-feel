@@ -1,11 +1,10 @@
-﻿using UnityEditor;
-using OmiyaGames.Global.Editor;
+using OmiyaGames.Global.Settings.Editor;
 
-namespace OmiyaGames.TimeSettings.Editor
+namespace OmiyaGames.GameFeel.Editor
 {
 	///-----------------------------------------------------------------------
 	/// <remarks>
-	/// <copyright file="TimeSettingsEditor.cs" company="Omiya Games">
+	/// <copyright file="GameFeelSettingsBuilder.cs" company="Omiya Games">
 	/// The MIT License (MIT)
 	/// 
 	/// Copyright (c) 2022 Omiya Games
@@ -39,19 +38,18 @@ namespace OmiyaGames.TimeSettings.Editor
 	/// <strong>Date:</strong> 2/7/2022<br/>
 	/// <strong>Author:</strong> Taro Omiya
 	/// </term>
-	/// <description>Initial version</description>
+	/// <description>Initial verison.</description>
 	/// </item>
 	/// </list>
 	/// </remarks>
 	///-----------------------------------------------------------------------
 	/// <summary>
-	/// Editor for <see cref="TimeSettings"/>.
-	/// Appears under inspector when selecting the asset.
+	/// Pre- and post-build script to add an instance of
+	/// <see cref="GameFeelSettings"/> into the pre-loaded assets (and thus, build.)
 	/// </summary>
-	[CustomEditor(typeof(TimeSettings))]
-	public class TimeSettingsEditor : SettingsEditor
+	public class GameFeelSettingsBuilder : BaseSettingsBuilder<GameFeelSettings>
 	{
 		/// <inheritdoc/>
-		public override string SidebarDisplayPath => TimeManager.SIDEBAR_PATH;
+		public override string ConfigName => Juice.CONFIG_NAME;
 	}
 }
