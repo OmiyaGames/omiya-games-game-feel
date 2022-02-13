@@ -1,9 +1,11 @@
 {
-    "name": "OmiyaGames.Time",
-    "rootNamespace": "OmiyaGames.Time",
+    "name": "OmiyaGames.GameFeel",
+    "rootNamespace": "OmiyaGames.GameFeel",
     "references": [
         "GUID:cdda17712c724478898665290e9a02cc",
-        "GUID:5a47daee1058bbd4ebc7a2d2e7de3c24"
+        "GUID:5a47daee1058bbd4ebc7a2d2e7de3c24",
+        "GUID:de7529f634f783eb59796ad332cd358f",
+        "GUID:73e76bd60959c3f41a9067c3fbf22b24"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
