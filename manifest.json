@@ -1,0 +1,249 @@
+{
+  "sitemap": {
+    "fileOptions": {
+      "api/*": {
+        "baseUrl": "https://omiyagames.github.io/omiya-games-game-feel/",
+        "changefreq": "daily"
+      }
+    },
+    "baseUrl": "https://omiyagames.github.io/omiya-games-game-feel/",
+    "changefreq": "weekly"
+  },
+  "homepages": [],
+  "source_base_path": "D:/a/omiya-games-game-feel/omiya-games-game-feel/Documentation~",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OmiyaGames.GameFeel.Editor.GameFeelSettingsBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OmiyaGames.GameFeel.Editor.GameFeelSettingsBuilder.html",
+          "hash": "Y9rjVB7TSmjqfsb/GmYuOIpskcmdhWxXQG9Gij6tVEs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OmiyaGames.GameFeel.Editor.GameFeelSettingsEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OmiyaGames.GameFeel.Editor.GameFeelSettingsEditor.html",
+          "hash": "nvg18M/g3vIXNGXfMCgVZsH3UiyJteU+B5fIuABbhiI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OmiyaGames.GameFeel.Editor.GameFeelSettingsProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OmiyaGames.GameFeel.Editor.GameFeelSettingsProvider.html",
+          "hash": "S1Q2zlQeR6v8okZBO24za2k1da21EBCNbViLthcb0/0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OmiyaGames.GameFeel.Editor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OmiyaGames.GameFeel.Editor.html",
+          "hash": "YkyoNFNvzsW3RAeMmB0TH5d98JUDWHH6b8gMz80hnsM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OmiyaGames.GameFeel.GameFeelSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OmiyaGames.GameFeel.GameFeelSettings.html",
+          "hash": "0bLvcC2HF0U/ifFztRd0iIbugLK4Px5ghdIszNaLVFw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OmiyaGames.GameFeel.Juice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OmiyaGames.GameFeel.Juice.html",
+          "hash": "pZtz6xgrTHO+cI8YhQAvuIBzikEcg8EaRPcdziMR5kQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/OmiyaGames.GameFeel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/OmiyaGames.GameFeel.html",
+          "hash": "NMyB0ZuDmXE+K6a2gRFD5oac4esHInf73FM1kh02Vyw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "ooSDBLxye9sBGsCoja+nHrfhZxxamWRv0beR6B00jQ0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "U00nfo0+np4TlFajye0eqddF0O5NU6tOtiQV/oMvG3k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/README.html",
+          "hash": "Q3JKRQx04wqf5/DdPY812u5/gyDv7W1fGqn5YNjdDZI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/changelog.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/changelog.html",
+          "hash": "c5Qah2DOFwxZNWZIFqH2E+4R/t1ou4qC4RleZz9LUvc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "manual/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "manual/toc.html",
+          "hash": "UrHIAyszIPz6NyrY79tnSTa2cbRXbcGtwFx8+oS5D6o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "resources/README.md",
+      "output": {
+        "resource": {
+          "relative_path": "resources/README.md"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "ReV4fHIiegcVpE8I41Fno76S6FC1OGZXG4R9U1e1aKM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 7,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
