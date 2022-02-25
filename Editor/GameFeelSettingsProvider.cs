@@ -65,7 +65,7 @@ namespace OmiyaGames.GameFeel.Editor
 		/// <inheritdoc/>
 		public override string HeaderText => "Game Feel Settings";
 		/// <inheritdoc/>
-		public override string HelpUrl => "https://github.com/OmiyaGames/omiya-games-game-feel";
+		public override string HelpUrl => "https://omiyagames.github.io/omiya-games-game-feel";
 
 		/// <summary>
 		/// Constructs a project-scoped <see cref="SettingsProvider"/>.
