@@ -42,7 +42,7 @@
   "manual/changelog.html": {
     "href": "manual/changelog.html",
     "title": "Change Log: | Game Feel documentation",
-    "keywords": "Change Log: 1.0.0-pre.1 Initial release! Added Juice.HitPause(float) for temporary time pauses."
+    "keywords": "Change Log: 1.0.1-pre.1 Enhancement: minor documentation fix. 1.0.0-pre.1 Initial release! Added Juice.HitPause(float) for temporary time pauses."
   },
   "manual/README.html": {
     "href": "manual/README.html",
