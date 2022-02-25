@@ -3,7 +3,7 @@
   "displayName": "Omiya Games - Game Feel",
   "version": "1.0.1-pre.1",
   "unity": "2021.2",
-  "unityRelease": "11f1",
+  "unityRelease": "12f1",
   "description": "Tools for playing juicy, full-screen special effects.",
   "category": "Tool",
   "type": "tool",
@@ -17,8 +17,8 @@
     "com.unity.ext.nunit": "1.0.0",
     "com.omiyagames.common": "1.2.0",
     "com.omiyagames.global": "1.3.0",
-    "com.omiyagames.global.settings": "1.0.0-pre.1",
-    "com.omiyagames.managers": "1.0.0-pre.1"
+    "com.omiyagames.global.settings": "1.1.0-pre.1",
+    "com.omiyagames.managers": "1.0.1-pre.1"
   },
   "keywords": [
     "Omiya Games",
