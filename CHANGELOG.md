@@ -1,5 +1,9 @@
 # Change Log:
 
+## 1.0.1-pre.2
+
+- Simplifying dependencies.
+
 ## 1.0.1-pre.1
 
 - **Enhancement:** minor documentation fix.
